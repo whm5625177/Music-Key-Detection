@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Key Detection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            padding-top: 50px;
+        }
+        h1, h3 {
+            color: #333;
+        }
+        #file {
+            display: none;
+        }
+        .upload-button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .upload-button:hover {
+            background-color: #45a049;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 50px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        .music-icon {
+            height: auto;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎵 MUSIC KEY DETECTION 🎵</h1>
+    <h3>🚀 Simply click below to get started. 🚀</h3>
+    <label for="file" class="upload-button">Choose Files</label>
+    <form id="upload-form" action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" id="file">
+        <input type="submit" value="Upload" style="display:none;">
+    </form>
+    <img src="static/music_icon.png" alt="Music Icon" class="music-icon">
+
+    <script>
+        document.getElementById('file').addEventListener('change', function() {
+            document.getElementById('upload-form').submit();
+        });
+    </script>
+</body>
+</html>

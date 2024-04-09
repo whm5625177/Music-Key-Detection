@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            padding-top: 50px;
+        }
+        .result {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .key {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .mode {
+            font-size: 48px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+            animation: blink 1s infinite alternate; /* 添加闪烁动画 */
+        }
+        .notes {
+            font-size: 16px;
+            color: #666;
+            margin-top: 20px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 50px;
+            border-radius: 10px; /* 添加圆角 */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* 添加阴影 */
+            transition: transform 0.3s ease; /* 添加缩放动画 */
+        }
+        img.zoomed {
+            transform: scale(1.1); /* 添加放大效果 */
+        }
+        @keyframes blink {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0.5;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="result">
+        <div class="key">Detected Key: {{ detected_key }} {{ mode }}</div>
+        <div class="notes">Most Frequent Notes: {{ frequent_notes }}</div>
+        <img src="static/cool_image.jpg" alt="Cool Image">
+    </div>
+    <script>
+        // 添加 JavaScript 动态效果，例如点击图片时放大缩小
+        document.querySelector('img').addEventListener('click', function() {
+            this.classList.toggle('zoomed');
+        });
+    </script>
+</body>
+</html>
